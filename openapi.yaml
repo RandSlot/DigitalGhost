@@ -1,0 +1,61 @@
+openapi: 3.1.0
+info:
+  title: AutoSpace3D API
+  version: '0.2.0'
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      summary: Health check
+  /auth/telegram:
+    post:
+      summary: Telegram sign-in (demo)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                telegram_id:
+                  type: integer
+                name:
+                  type: string
+      responses:
+        '200':
+          description: user
+  /cars:
+    get:
+      summary: List cars
+      responses:
+        '200':
+          description: list
+    post:
+      summary: Create car (multipart with media)
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                price:
+                  type: number
+                km:
+                  type: number
+      responses:
+        '200':
+          description: created
+  /cars/{id}:
+    get:
+      summary: Get car
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: car

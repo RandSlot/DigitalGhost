@@ -1,0 +1,20 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, Arial, sans-serif; }
+html, body, #root { height: 100%; }
+.app {
+  height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg,#07070a 0%, #0b1020 60%);
+  color: #fff;
+}
+.container { width: 100%; max-width: 980px; margin: 0 auto; padding: 20px; }
+.header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.title { font-size:20px; font-weight:700; }
+.canvas-wrap { width:100%; height:68vh; background: rgba(255,255,255,0.02); border-radius:12px; overflow:hidden; position:relative; }
+.card { position:absolute; left:20px; bottom:20px; background: rgba(0,0,0,0.5); padding:12px 16px; border-radius:10px; backdrop-filter: blur(6px); width:calc(100% - 40px); max-width:520px; }
+.controls { display:flex; gap:8px; margin-top:12px; align-items:center; }
+.btn { background: rgba(255,255,255,0.06); border: none; color: #fff; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.mode-toggle { background: rgba(255,255,255,0.03); padding:6px 10px; border-radius:8px; }
+.small { font-size:13px; opacity:0.9; }
